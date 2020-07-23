@@ -4,7 +4,7 @@ FROM centos
 ARG LOCAL_USER=myuser
 ARG LOCAL_USER_UID=100000
 ARG LOCAL_USER_GID=100000
-ARG PRIV_CMDS='/bin/ch*,/bin/cat,/bin/gzip,/bin/mkdir,/bin/ps,/bin/mv,/bin/cp,/usr/bin/apt*,/usr/bin/pip*,/bin/yum'
+ARG PRIV_CMDS='/bin/ch*,/bin/cat,/bin/gunzip,/bin/tar,/bin/mkdir,/bin/ps,/bin/mv,/bin/cp,/usr/bin/apt*,/usr/bin/pip*,/bin/yum'
 
 SHELL ["/bin/bash", "-c"]
 
