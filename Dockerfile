@@ -1,5 +1,7 @@
-#FROM ubuntu
-FROM centos
+FROM ubuntu
+#FROM debian
+#FROM centos
+#FROM python
 
 ARG LOCAL_USER=myuser
 ARG LOCAL_USER_UID=100000
@@ -15,7 +17,7 @@ RUN if [ -x /usr/bin/apt ]; then \
     fi
 
 RUN groupadd -g $LOCAL_USER_GID $LOCAL_USER && \
-    useradd  -m -g $LOCAL_USER_GID -m -s /bin/bash -u $LOCAL_USER_UID $LOCAL_USER && \
+    useradd  -m -g $LOCAL_USER_GID -s /bin/bash -u $LOCAL_USER_UID $LOCAL_USER && \
     echo "$LOCAL_USER	ALL=NOPASSWD: $PRIV_CMDS" >> /etc/sudoers
 
 USER $LOCAL_USER
