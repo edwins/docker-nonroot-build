@@ -3,7 +3,7 @@ FROM alpine
 ARG LOCAL_USER=myuser
 ARG LOCAL_USER_UID=100000
 ARG LOCAL_USER_GID=100000
-ARG PRIV_CMDS='/bin/ch*,/bin/cat,/bin/gunzip,/bin/tar,/bin/mkdir,/bin/ps,/bin/mv,/bin/cp,/usr/bin/pip*,/sbin/apk'
+ARG PRIV_CMDS='/usr/bin/pip*,/sbin/apk'
 
 RUN apk --no-cache add sudo && \
     addgroup -g $LOCAL_USER_GID $LOCAL_USER && \
