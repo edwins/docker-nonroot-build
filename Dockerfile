@@ -6,7 +6,7 @@ FROM ubuntu
 ARG LOCAL_USER=myuser
 ARG LOCAL_USER_UID=100000
 ARG LOCAL_USER_GID=100000
-ARG PRIV_CMDS='/bin/ch*,/bin/cat,/bin/gunzip,/bin/tar,/bin/mkdir,/bin/ps,/bin/mv,/bin/cp,/usr/bin/apt*,/usr/bin/pip*,/bin/yum'
+ARG PRIV_CMDS='/usr/bin/apt*,/usr/bin/pip*,/bin/yum'
 
 RUN if [ -x /usr/bin/apt ]; then \
       apt-get update && apt-get -y install sudo && rm -rf /var/lib/apt/lists/*; \
